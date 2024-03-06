@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            width: 100%;;
+            margin: 0;
+            height: 100vh;
+            background-image: url("./photos/project.jpeg");;
+
+            overflow-x: hidden;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 5%;
+        }
+
+        .logo {
+            width: 2rem;
+            height: 2.2em;
+        }
+
+        nav {
+            background-color: #000;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            height: 4%;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: inline-block;
+        }
+
+        .card {
+            width: 18rem;
+            margin: 20px;
+
+        }
+        .hero{
+            animation: scroll 90s linear infinite;
+        }
+        .hero:hover{
+            animation-play-state: paused;
+        }
+
+        /* Add animation for card transition */
+        @keyframes scroll{
+            0% {
+                
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+
+        }
+
+        .card-img-top{
+          height:15rem;
+
+        }
+
+
+        .pop-up1 {
+            width: 44rem;
+            height: 30rem;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            color:#fff;
+            padding: 0 30px 30px;
+            visibility:hidden;
+            transition: transform 0.4s;
+            z-index: 1001;
+            overflow-x: hidden;
+            background-image: url("./photos/puzzdownload.jpeg");
+            /* Prevent background image from repeating */
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+          
+        }
+
+        .pop-up2 {
+            width: 44rem;
+            height: 30rem;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            color:#000;
+            padding: 0 30px 30px;
+            visibility:hidden;
+            transition: transform 0.4s;
+            z-index: 1001;
+            overflow-x: hidden;
+            /* Prevent background image from repeating */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .pop-up3{
+            width: 46rem;
+            height: 35rem;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            color:#000;
+            padding: 0 30px 30px;
+            visibility:hidden;
+            transition: transform 0.4s;
+            z-index: 1001;
+            overflow-x: hidden;
+            background-image: url("./photos/Agrooo.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .pop-up4 {
+            width: 40rem;
+            height: 35rem;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            color:#000;
+            visibility:hidden;
+            transition: transform 0.4s;
+            z-index: 1001;
+            overflow-x: hidden;
+            /* Prevent background image from repeating */
+            background-repeat: no-repeat;
+        
+
+        }
+        .pop-up5 {
+            width: 44rem;
+            height: 30rem;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            color:#000;
+            padding: 0 30px 30px;
+            visibility:hidden;
+            transition: transform 0.4s;
+            z-index: 1001;
+            overflow-x: hidden;
+            background-image: url("./photos/zirrra.jpg");
+            /* Prevent background image from repeating */
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .open-popup {
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .card-text{
+            background-color:black;
+            color: #fff;
+        }
+        .card-body{
+            background-color:black;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .above{
+           
+            position: absolute;
+            top: 0;
+            left: 5%;
+          
+            color:chartreuse;
+        
+        }
+        /* .heading{
+            position: absolute;
+            top: 0;
+            left: 5%;
+          
+            color:chartreuse;
+        } */
+        
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav>
+        <img class="logo" src="./photos/logo1.jpg" alt="">
+        <div>
+            <a href="./index.html">Home</a>
+            <a href="#">Projects</a>
+            <a href="./contactus.html">Contact  &nbsp &nbsp</a>
+        </div>
+    </nav>
+            <div class="pop-up1" onclick="closePopup()" id="1">
+                <h1>Puzzle Master</h1>
+        <h5>
+            Puzzle Master is a dynamic learning environment that prioritizes user experience.
+        	Users have the flexibility to select from various difficulty levels for puzzles and challenges.
+        </h5>
+                <h5>
+                    
+                    In "Puzzle Master," we prioritized security with the following measures:</h5>
+
+                  <h5> 1. Password Security:</h5> 
+                       - Implemented bcrypt for secure password hashing, safeguarding user credentials.
+                    
+                   <h5>2. Input Validation:</h5>
+                       - Employed input validation to ensure accurate user details, enhancing data integrity.
+                    
+                    <h5>3. Comprehensive Testing:</h5>
+                       - Conducted rigorous manual and automated testing to identify and address vulnerabilities.
+                    
+                  <h5> 4. JWT Authentication:</h5>
+                       - Used JSON Web Tokens for secure user authentication, ensuring efficient data transmission.
+                    
+                       <h5> 5. Robust Session Management:  </h5>
+                     - Implemented strong session techniques with secure cookies to prevent unauthorized access.
+                    
+                 <H5>   6. Limited Session Duration:</H5>
+                       - Configured session cookies with a 30-minute maximum duration for added security.
+                    
+                
+                    
+                </p>
+                <!-- <button onclick="closePopup()">Close</button> -->
+            </div>
+
+
+            <div class="pop-up2" onclick="closePopup()"  id="2">
+                <h1></h1>
+                <video autoplay muted loop id="video-bg">
+                    <source src="./photos/Buggy2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+            </div>
+
+
+            <div class="pop-up3" onclick="closePopup()" id="3">
+            </div>
+
+
+            <div class="pop-up4"onclick="closePopup()"  id="4">
+                <video autoplay muted loop id="video-bg">
+                    <source src="./photos/heatwave.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+               
+
+                <h1 class="above">
+
+                    <p class="heading" style="color:yellow; text-align: center; text-shadow: 2px 2px 4px red;">Thermosense</p>
+                    The Thermosense is an innovative ,cost-effective system designed for early detection of potentially hazardous heat waves. 
+                  </h1>
+            </div>
+
+
+            <div class="pop-up5" onclick="closePopup()" id="5">
+                <h1 style="color:yellow; text-align: center; text-shadow: 2px 2px 4px red;">Task Hub</h1>
+
+
+                      <div>&nbsp;</div>
+                <h4>Functionality and Components of Task Hub: </h4>
+                <h4>1.Ticket Management System: </h4>
+                <h3><li>User Roles </li>
+                <li>Ticket Creation </li>
+                <li>Ticket Status</li>
+                 <li>Comments and Attachments</li></h3>
+
+                <h4>2.Integration with Google Keep:</h4>
+                <h3>
+                    <li>Note-Taking </li>
+                    <li>Real-Time Sync. </li>
+                </h3>
+                <h4>3.Nodemailer Integration:</h4>
+                <h3><li>Email Notifications</li>
+                <li>SMTP Configuration </li></h3>
+                <h4>4.User Authentication and Authorization:</h4>
+                <h3><li>Secure User Authentication</li>
+                <li>Role-Based Access Control</li></h3>
+                <h4>5.Database Integration:</h4>
+                <h3><li>Data Storage </li></h3>
+
+            </div>
+
+    <div class="hero">
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(1)">
+                <img src="./photos/puzzlemaster.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Puzzle Master</h1>
+                    <p class="card-text"> An interactive learning platform seamlessly integrating <b>enhanced security measures</b>  to cultivate problem-solving capabilities in a protected online environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(4)">
+                <img src="./photos/heatwave detector.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Thermosense</h1>
+                    <p class="card-text">Thermosense employs operational amplifiers, thermistors and relays to create an advanced heat wave detector, utilizing early warning signals for proactive hazard prevention.</p>
+                </div>
+            </div>
+        </div>
+ 
+
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(3)">
+                <img src="./photos/Cropsafeguarding.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">AgroSafeNet</h1>
+                    <p class="card-text">Developed an advanced wildlife monitoring system utilizing <b>YOLO algorithm</b> for animal identification, with GSM notifications for timely alerts on detected animals and fire incidents.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(2)">
+                <img src="./photos/buggy.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Robo-Car</h1>
+                    <p class="card-text">An interdisciplinary project <b>blending electronics and computer science</b>, utilizing Arduino IDE, coding, and electronic components for integrated  and innovative solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container my-3">
+            <div class="card"    onclick="openPopup(5)">
+                <img src="./photos/zira.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Task Hub</h1>
+                    <p class="card-text">A versatile ticket management system inspired by <b>JIRA, integrated with Google Keep</b> featuring real-time interaction. Enhanced with additional features using Nodemailer</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(1)">
+                <img src="./photos/puzzlemaster.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Puzzle Master</h1>
+                    <p class="card-text"> An interactive learning platform seamlessly integrating <b>enhanced security measures</b>  to cultivate problem-solving capabilities in a protected online environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(4)">
+                <img src="./photos/heatwave detector.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Thermosense</h1>
+                    <p class="card-text">Thermosense employs operational amplifiers, thermistors and relays to create an advanced heat wave detector, utilizing early warning signals for proactive hazard prevention.</p>
+                </div>
+            </div>
+        </div>
+ 
+
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(3)">
+                <img src="./photos/Cropsafeguarding.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">AgroSafeNet</h1>
+                    <p class="card-text">Developed an advanced wildlife monitoring system utilizing <b>YOLO algorithm</b> for animal identification, with GSM notifications for timely alerts on detected animals and fire incidents.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-3">
+            <div class="card"  onclick="openPopup(2)">
+                <img src="./photos/buggy.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Robo-Car</h1>
+                    <p class="card-text">An interdisciplinary project <b>blending electronics and computer science</b>, utilizing Arduino IDE, coding, and electronic components for integrated  and innovative solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container my-3">
+            <div class="card"    onclick="openPopup(5)">
+                <img src="./photos/zira.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h1 class="card-text">Task Hub</h1>
+                    <p class="card-text">A versatile ticket management system inspired by <b>JIRA, integrated with Google Keep</b> featuring real-time interaction. Enhanced with additional features using Nodemailer</p>
+                </div>
+            </div>
+        </div>
+
+ 
+    </div>
+
+    <script>
+        let hero = document.querySelector(".hero");
+  
+        function openPopup(cardId) {
+        let popup = document.getElementById(cardId);
+         document.body.classList.add("popup-open");
+        popup.classList.add("open-popup");
+        hero.style.animationPlayState = "paused";
+    }
+
+    
+        function closePopup() {
+            document.body.classList.remove("popup-open");
+            let openPopup = document.querySelector(".open-popup");
+            if (openPopup) {
+                openPopup.classList.remove("open-popup");
+            }
+            hero.style.animationPlayState = "running";
+        }
+    </script>
+</body>
+</html>
